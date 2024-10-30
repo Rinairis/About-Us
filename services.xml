@@ -1,1 +1,14 @@
-
+<Services>
+  <services>
+    <ID> SRV-01 </ID>
+      <SRV> Backpacking </SRV>
+        <DSC> weekend backpacking trip </DSC>
+          <DUR> 03 days </DUR>
+            <CST> 570 </CST>
+              <DPT> Fri-morning-returns su </DPt
+                <DSC> caffeinating climbing caffee for outdoor people. Includes view sighing & all meals. </DSC>
+              </services>
+  <services>
+    <SRV> climbing </SRV>
+    <DSC> rock climbing </DSC>
+    
