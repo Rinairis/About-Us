@@ -9,12 +9,20 @@
                 <DSC> caffeinating climbing caffee for outdoor people. Includes view sighing, all meals. </DSC>
               </services>
   <services>
+    <ID> SRV-02 </ID>
     <SRV> climbing </SRV>
     <DSC> rock climbing </DSC>
     <DUR> 01 day </DUR>
     <CST> $120 </CST>
     <DPT> 5 hours </DPT>
     <DSC> san franisco CA, sport climbing, trad climbing, bouldering, 9 AM- 2 PM </DSC>
-      
-      
+  </services>
+  <services>
+    <ID> SRV-03 </ID>
+    <SRV> climbing </SRV>
+    <DSC> lead climbing </DSC>
+    <DUR> 2 days </DUR> 
+    <CST> $1,120 </CST>
+    <DPT> 16 hour 9 AM- 5 PM </DPT> 
+  </services>  
     
