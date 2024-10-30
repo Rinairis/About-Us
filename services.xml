@@ -4,11 +4,17 @@
       <SRV> Backpacking </SRV>
         <DSC> weekend backpacking trip </DSC>
           <DUR> 03 days </DUR>
-            <CST> 570 </CST>
+            <CST> $570 </CST>
               <DPT> Fri-morning-returns su </DPt
-                <DSC> caffeinating climbing caffee for outdoor people. Includes view sighing & all meals. </DSC>
+                <DSC> caffeinating climbing caffee for outdoor people. Includes view sighing, all meals. </DSC>
               </services>
   <services>
     <SRV> climbing </SRV>
     <DSC> rock climbing </DSC>
+    <DUR> 01 day </DUR>
+    <CST> $120 </CST>
+    <DPT> 5 hours </DPT>
+    <DSC> san franisco CA, sport climbing, trad climbing, bouldering, 9 AM- 2 PM </DSC>
+      
+      
     
