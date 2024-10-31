@@ -25,4 +25,12 @@
     <CST> $1,120 </CST>
     <DPT> 16 hour 9 AM- 5 PM </DPT> 
   </services>  
+  <services>
+    <ID> SRV-04 </ID> 
+    <SRV> Land Nav </SRV> 
+    <DSC> Map <DSC>
+      <DUR> 03 days </DUR>
+      <CST> $100 </DUR> 
+        <DPT> 8 hour </DPT>
+        <DSC> 9 AM - 5 PM Fri-Su </DSC>
     
