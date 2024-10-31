@@ -1,36 +1,34 @@
-<Services>
-  <services>
-    <ID> SRV-01 </ID>
-      <SRV> Backpacking </SRV>
-        <DSC> weekend backpacking trip </DSC>
-          <DUR> 03 days </DUR>
-            <CST> $570 </CST>
-              <DPT> Fri-morning-returns su </DPt
-                <DSC> caffeinating climbing caffee for outdoor people. Includes view sighing, all meals. </DSC>
-              </services>
-  <services>
-    <ID> SRV-02 </ID>
-    <SRV> climbing </SRV>
-    <DSC> rock climbing </DSC>
-    <DUR> 01 day </DUR>
-    <CST> $120 </CST>
-    <DPT> 5 hours </DPT>
-    <DSC> san franisco CA, sport climbing, trad climbing, bouldering, 9 AM- 2 PM </DSC>
-  </services>
-  <services>
-    <ID> SRV-03 </ID>
-    <SRV> climbing </SRV>
-    <DSC> lead climbing </DSC>
-    <DUR> 2 days </DUR> 
-    <CST> $1,120 </CST>
-    <DPT> 16 hour 9 AM- 5 PM </DPT> 
-  </services>  
-  <services>
-    <ID> SRV-04 </ID> 
-    <SRV> Land Nav </SRV> 
-    <DSC> Map <DSC>
-      <DUR> 03 days </DUR>
-      <CST> $100 </DUR> 
-        <DPT> 8 hour </DPT>
-        <DSC> 9 AM - 5 PM Fri-Su </DSC>
-    
+<services>
+    <service>
+        <ID>SRV-01</ID>
+        <SRV>Backpacking</SRV>
+        <DSC>Weekend backpacking trip</DSC>
+        <DUR>03 days</DUR>
+        <CST>$570</CST>
+        <DPT>Fri morning - returns Sun</DPT>
+    </service>
+    <service>
+        <ID>SRV-02</ID>
+        <SRV>Rock Climbing</SRV>
+        <DSC>Rock climbing for all skill levels</DSC>
+        <DUR>01 day</DUR>
+        <CST>$120</CST>
+        <DPT>5 hours</DPT>
+    </service>
+    <service>
+        <ID>SRV-03</ID>
+        <SRV>Lead Climbing</SRV>
+        <DSC>Lead climbing experience</DSC>
+        <DUR>02 days</DUR>
+        <CST>$1,120</CST>
+        <DPT>16 hours</DPT>
+    </service>
+    <service>
+        <ID>SRV-04</ID>
+        <SRV>Land Navigation</SRV>
+        <DSC>Learn map reading and navigation skills</DSC>
+        <DUR>03 days</DUR>
+        <CST>$100</CST>
+        <DPT>8 hours</DPT>
+    </service>
+</services>
