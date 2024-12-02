@@ -66,7 +66,7 @@
             productCard.classList.add('product');
 
             productCard.innerHTML = `
-                <img src="${zelle}" alt="${product.name}">
+                <img src="${images/download (2).png}" alt="${product.name}">
                 <h3 class="product-title">${product.name}</h3>
                 <p class="product-price">$${product.price}</p>
                 <a href="zelle-payment://send?amount=${product.price}&note=Payment%20for%20${product.name}" class="buy-button">
