@@ -66,7 +66,7 @@
             productCard.classList.add('product');
 
             productCard.innerHTML = `
-                <img src="${images/download (2).png}" alt="${product.name}">
+                <img src="${    }" alt="${product.name}">
                 <h3 class="product-title">${product.name}</h3>
                 <p class="product-price">$${product.price}</p>
                 <a href="zelle-payment://send?amount=${product.price}&note=Payment%20for%20${product.name}" class="buy-button">
@@ -77,9 +77,8 @@
         });
     }
 
-    // Fetch data from JSON URL
-    fetch(apiUrl)
-        .then(response => response.json())
+    // Fetch data from JSON URL 
+    fetch(apiUrl) http://158.101.118.50/data/gearlist.json.then(response => response.json())
         .then(data => {
             displayProducts(data.products);
         })
