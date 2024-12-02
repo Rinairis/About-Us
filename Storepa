@@ -1,1 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelle</title>
+    <!-- Bootstrap CSS -->
+    <link href=" https://rinairis.github.io/About-Us/ rel="stylesheet">
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            color: green;
+        }
+        .buy-button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1 class="my-4 text-center">Welcome to Our Company Store</h1>
+    <div class="row" id="product-list">
+        <!-- Product items will be dynamically added here by JavaScript -->
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Fetch the JSON data (replace this URL with the actual URL provided)
+    const apiUrl = 'https://example.com/products.json';  // Replace with the provided JSON URL
+
+    // Function to display products
+    function displayProducts(products) {
+        const productList = document.getElementById('product-list');
+        products.forEach(product => {
+            // Create product card
+            const productCard = document.createElement('div');
+            productCard.classList.add('col-md-4');
+            productCard.classList.add('product');
+
+            productCard.innerHTML = `
+                <img src="${zelle}" alt="${product.name}">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-price">$${product.price}</p>
+                <a href="zelle-payment://send?amount=${product.price}&note=Payment%20for%20${product.name}" class="buy-button">
+                    Buy Now with Zelle
+                </a>
+            `;
+            productList.appendChild(productCard);
+        });
+    }
+
+    // Fetch data from JSON URL
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            displayProducts(data.products);
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+        });
+</script>
+
+</body>
+</html>
