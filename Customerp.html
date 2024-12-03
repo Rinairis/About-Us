@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caffeinated Climbing</title>
+    <title>Customer page </title>
     <link href="https://github.com/Rinairis/About-Us/blob/main/Storepa">
     <style>
         .product {
@@ -69,10 +69,10 @@
             const paymentLink = `zelle-payment://send?amount=${product.gear_cost}&note=Payment%20for%20${product.gear_name}`;
 
             productCard.innerHTML = `
-                <img src="${productImage}" alt="${product.gear_name}">
-                <h3 class="product-title">${product.gear_name}</h3>
-                <p class="product-price">$${product.gear_cost}</p>
-                <a href="${paymentLink}" class="buy-button">
+                <img src="${download (2).png}" alt="${product.climbing shoes}">
+                <h3 class="product-title">${product.gear shoes}</h3>
+                <p class="product-price">$${product.120}</p>
+                <a href="${zelle}" class="buy-button">
                     Buy Now with Zelle
                 </a>
             `;
@@ -81,8 +81,8 @@
     }
 
     // Fetch data from the JSON URL
-    fetch(apiUrl)
-        .then(response => response.json())
+    fetch(apiUrl) http://158.101.118.50/data/gearlist.json
+    .then(response => response.json())
         .then(data => {
             displayProducts(data);  // Data is an array of products, no need for `data.products`
         })
