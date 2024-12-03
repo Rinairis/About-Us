@@ -65,7 +65,7 @@
             const productImage = 'download (2).png'; // Image file name
 
             productCard.innerHTML = `
-                <img src="${productImage}" alt="${product.gear_name}">
+                <img src="${download (2).png}" alt="${product.gear_name}">
                 <h3 class="product-title">${product.gear_name}</h3>
                 <p class="product-price">$${product.gear_cost}</p>
                 <a href="zelle-payment://send?amount=${product.gear_cost}&note=Payment%20for%20${product.gear_name}" class="buy-button">
