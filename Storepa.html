@@ -41,7 +41,7 @@
 
 <div class="container">
     <h1 class="my-4 text-center">Welcome to Our Company Store</h1>
-    <div class="row" id="product-list">
+  
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -49,45 +49,46 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    // Fetch the JSON data from the actual URL provided
-    const apiUrl = './gearlist.json';  // Correct URL provided
-
-    // Function to display products
-    function displayProducts(products) {
-        const productList = document.getElementById('product-list');
-        products.forEach(product => {
-            // Create product card
-            const productCard = document.createElement('div');
-            productCard.classList.add('col-md-4');
-            productCard.classList.add('product');
-
-            // Use the provided image name (assuming it's in the same directory)
-            const productImage = 'download (2).png'; // Image file name
-
-            productCard.innerHTML = `
-                <img src="${download (2).png}" alt="${product.gear_name}">
+   /*
+                <img src="${download (2).png}" alt="${product.gear shoes}">
                 <h3 class="product-title">${product.gear_name}</h3>
                 <p class="product-price">$${product.gear_cost}</p>
                 <a href="zelle-payment://send?amount=${product.gear_cost}&note=Payment%20for%20${product.gear_name}" class="buy-button">
                     Buy Now with Zelle
                 </a>
             `;
-            productList.appendChild(productCard);
-        });
-    }
-
-    // Fetch data from the JSON URL 
-http://158.101.118.50/data/gearlist.json
-fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            displayProducts(data);  // Data is an array of products, no need for `data.products`
-        })
-        .catch(error => {
-            console.error('Error fetching products:', error);
-        });
+   */
 </script>
+<div id="recordset"></div>
+<hr>
+<script>
+function fetchJSONData() {
+	fetch("./gearlist.json").then((res) => {
+		if (!res.ok) {
+			throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+	})
+    .then((data) => {
+		rs =  '<div class="row">';
+		rs += '   <div class="col-md-4"><h4>Attribute One</h4></div>';
+		rs += '   <div class="col-md-4"><h4>Attribute Two</h4></div>';
+		rs += '   <div class="col-md-4"><h4>Attribute Three</h4></div>';
+		rs += '</div>';
+		for(i=0;i<data.length;i++) {
+			rs += '<div class="row">';
+			rs += '   <div class="col-md-4">' + data[i].gear_manu + '</div>';
+			rs += '   <div class="col-md-4">' + data[i].gear_name + '</div>';
+			rs += '   <div class="col-md-4">' + data[i].gear_cost + '</div>';
+			rs += '</div>';
+		} 
+		document.getElementById("recordset").innerHTML = rs;
+	})
+	.catch((error) =>
+		console.error("Unable to fetch data:", error));
+}
+fetchJSONData();
 
-</body>
+</script></body>
 </html>      
   
