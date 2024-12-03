@@ -1,89 +1,97 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Lead Climbing Adventure</title>
-    
-    <link href="https://rinairis.github.io/About-Us/" rel="stylesheet" integrity="sha384-KyZXEJ6mRoA6X64t5dd00c6b2c321cd06255lXfGZ0kZedg23" crossorigin="anonymous">
+    <title>Caffeinated Climbing</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            color: green;
+        }
+        .buy-button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container mt-5">
-        <!-- Adventure Profile Card -->
-        <div class="card">
-            <img src="images/Climb-2.png" class="card-img-top" alt="Lead Climbing Adventure">
-            <div class="card-body">
-                <h5 class="card-title">Lead Climbing Adventure</h5>
-                <p class="card-text"><strong>Date:</strong> June 15, 2024</p>
-                <p class="card-text"><strong>Customer:</strong> Theo</p>
-                <blockquote class="blockquote">
-                    <p class="mb-0">"A good sun bath with a good hike view is a good experience."</p>
-                    <footer class="blockquote-footer">Theo</footer>
-                </blockquote>
-                <p class="card-text">
-                    Lead climbing is an exhilarating outdoor experience that combines physical endurance and mental focus. The views from the cliff were breathtaking, offering a perfect balance of challenge and beauty. Theo had a great time, and the day ended with a perfect sunbath and panoramic views of the hiking trail below.
-                </p>
-            </div>
-        </div>
 
-        <!-- More Information and Feedback Form -->
-        <div class="mt-5">
-            <h2>For More Information or Feedback</h2>
-            <form id="infoForm">
-                <!-- Name Input -->
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-
-                <!-- Email Input -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-
-                <!-- Inquiry Type (More Info or Feedback) -->
-                <div class="mb-3">
-                    <label for="inquiryType" class="form-label">Type of Inquiry</label>
-                    <select class="form-select" id="inquiryType" required>
-                        <option value="" disabled selected>Select Inquiry Type</option>
-                        <option value="More Information">More Information</option>
-                        <option value="Feedback">Feedback</option>
-                    </select>
-                </div>
-
-                <!-- Message Input -->
-                <div class="mb-3">
-                    <label for="message" class="form-label">Your Message</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+<div class="container">
+    <h1 class="my-4 text-center">Welcome to Our Company Store</h1>
+    <div class="row" id="product-list">
     </div>
+</div>
 
-    <!-- Bootstrap JS and JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybpaXy8YVhpx4r+7Zys/15UksZQF1lU4k5dbQm5W4hPiD2Xjdl" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0JmK47G3IRR6dnjL9siFx1mdF0Z2pa0x/Z6hxl7B5eQOSMdo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        // Handle form submission
-        document.getElementById('infoForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const inquiryType = document.getElementById('inquiryType').value;
-            const message = document.getElementById('message').value;
+<script>
+    // Correct URL for JSON data
+    const apiUrl = 'http://158.101.118.50/data/gearlist.json';  
 
-            alert(`Thank you, ${name}! We will get back to you shortly regarding your ${inquiryType}.`);
-            
-            // Reset the form after submission
-            document.getElementById('infoForm').reset();
+    // Function to display products
+    function displayProducts(products) {
+        const productList = document.getElementById('product-list');
+        products.forEach(product => {
+            // Create product card
+            const productCard = document.createElement('div');
+            productCard.classList.add('col-md-4');
+            productCard.classList.add('product');
+
+            // Assuming product image URL is stored in product.image_url
+            const productImage = product.image_url;  // Use this key for the image URL
+
+            // Correcting the Zelle payment link format
+            const paymentLink = `zelle-payment://send?amount=${product.gear_cost}&note=Payment%20for%20${product.gear_name}`;
+
+            productCard.innerHTML = `
+                <img src="${productImage}" alt="${product.gear_name}">
+                <h3 class="product-title">${product.gear_name}</h3>
+                <p class="product-price">$${product.gear_cost}</p>
+                <a href="${paymentLink}" class="buy-button">
+                    Buy Now with Zelle
+                </a>
+            `;
+            productList.appendChild(productCard);
         });
-    </script>
-</body>
+    }
 
+    // Fetch data from the JSON URL
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            displayProducts(data);  // Data is an array of products, no need for `data.products`
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+        });
+</script>
+
+</body>
 </html>
+               
+       
